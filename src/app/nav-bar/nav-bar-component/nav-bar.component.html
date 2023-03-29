@@ -1,0 +1,52 @@
+<p>nav-bar works!</p>
+
+<nav  class="navbar navbar-expand-lg fixed-top  navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" routerLinkActive="active current" aria-current="page" href="#">Home</a>
+                </li>
+               <li class="nav-item">
+                    <a class="nav-link" routerLink="#">Songs</a>
+                </li> 
+                <li class="nav-item" routerLinkActive="active current">
+                    <a class="nav-link"routerLink="youtube">Youtube Videos</a>
+                </li> 
+                 <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li> 
+            </ul>
+        </div>
+        <form class="d-flex">
+             
+            <input class="form-control me-2"  ngModel name="search" #search="ngModel" routerLinkActive="active current" type="search" placeholder="Search" aria-label="Search">
+           <!-- {{search.viewModel}} -->
+            <button class="btn btn-outline-success" routerLinkActive="active current" (click)="searchData(search.viewModel)" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div *ngIf="showResults">
+    Channels
+    <ul  *ngFor="let eachChannel of showAllChannels">
+        <a href="https://www.youtube.com/embed/{{ eachChannel.id.channelId }}">
+            <img class="img-thumbnail" height="100" width="150" src="{{ eachChannel.snippet.thumbnails.default.url }}" />
+            <li>{{ eachChannel.snippet.channelTitle }}</li>
+            <li>{{ eachChannel.snippet.description }}</li>
+        </a>
+    </ul>
+    Videos
+    <ul *ngFor="let eachVideo of showAllRecords">
+        <a href="https://www.youtube.com/embed/{{ eachVideo.id.videoId }}">
+            <img class="img-thumbnail" height="100" width="150" src="{{ eachVideo.snippet.thumbnails.default.url }}" />
+            <li>{{ eachVideo.snippet.channelTitle }}</li>
+            <li>{{ eachVideo.snippet.description }}</li>
+        </a>
+    </ul>
+
+</div>
