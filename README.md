@@ -1,6 +1,10 @@
-# MiniTV
+# MiniTV - Using Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+
+Mini-TV is a Web Based Application that has been designed using Youtube API and Spotify API This application allows users to access and watch videos from youtube as well as listen to songs from spotify.
+## Frontend-  Angular , Typescript , Bootstrap.
+## API- 3rd Party API (Youtube API , Spotify API)
 
 # Output
 ![Screenshot from 2023-06-13 13-14-18](https://github.com/ManishaKanwar-1809/Mini-TV/assets/66915421/fa6869a8-4e68-4c5b-890c-b3673c45462b)
